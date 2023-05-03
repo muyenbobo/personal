@@ -1,3 +1,4 @@
+/* General styles */
 body {
     color: #40514E;
     margin: 0;
@@ -7,15 +8,21 @@ body {
     width: 100%;
 }
 
-
-h1 {
-    font-size: 6rem;
+.steve{
     margin-top: 0;
-    font-family: Sacramento, cursive;
-    margin: 50px auto 0 auto;
-    color: #66BFBF;
+    padding-top: 13%;
 }
 
+.pro{
+    text-decoration: underline;
+}
+
+
+h1 {font-size: 6rem;
+    font-family: Sacramento, cursive;
+    margin: 5% auto 0 auto;
+    color: #66BFBF;
+}
 
 h2 {
     font-family: 'Montserrat', sans-serif;
@@ -23,9 +30,7 @@ h2 {
     color: #66BFBF;
     font-weight: normal;
     padding-bottom: 10px;
-      
 }
-
 
 h3 {
     font-family: 'Montserrat', sans-serif;
@@ -33,83 +38,85 @@ h3 {
     font-size: 1.5rem;
 }
 
-
 a {
     color: #11999E;
     font-family: 'Montserrat', sans-serif;
-    margin: 20px 30px;
+    margin: 2% 3%;
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: #EAF6F6;
 }
 
-p{
+p {
     line-height: 2;
-
 }
 
-
-hr{
+hr {
     border: dotted #EAF6F6 6px;
     border-bottom: none;
-    width: 4%;
-    margin: 100px auto;
+    width: 10%;
+    margin: 10% auto;
 }
 
-
-
+/* Top container */
 .top-container {
-    position: relative;
-    background-color: #357484;        
+    background-color: #357484;
+    width: 100%;
+    margin-top: 0;
+
 }
 
 
+.sp
+
+/* Middle container */
 .middle-container {
-    margin-bottom: 100px;
+    margin-bottom: 10%;
+    background-color: #66BFBF;
 }
 
-
+/* Bottom container */
 .bottom-container {
     margin-bottom: 0;
     background-color: #66BFBF;
-    padding: 40px 0 20px;
+    padding: 4% 0 2%;
 }
 
 
-.pro {
-    text-decoration: underline;
-    touch-action: double-tap-zoom;
+.mountain{
+    width: 50%;
 }
 
 
-.intro{
-width: 50%;
-margin: auto;
+
+/* Introduction section */
+.intro {
+    width: 90%;
+    margin: 0 auto;
+    clear: both;
 }
 
-
+/* Clouds */
+.top-cloud, .bottom-cloud {
+    position: absolute;
+    width: 12%;
+    margin: 50px 0 30px 0;
+}
 
 .top-cloud {
-    position: relative;
-    left: 300px;
-    margin: 50px 0 10px 0;
-    
+    left: 75%;
+    margin: 5% 0 10% 0;
+    top: 1%;
+
 }
-
-
 
 .bottom-cloud {
-    position: absolute;
-    left: 250px;
-    bottom: 350px;
-}
-
-
-.steve{
+    left: 15%;
+    bottom: 10%;
     
-}
+    }
 
 
 .skill-row{
@@ -136,6 +143,8 @@ margin: auto;
     width: 25%;
     float: right;
     margin-left: 30px;
+    margin-bottom: 10%;
+
  
 }
 
@@ -161,38 +170,31 @@ margin: auto;
  
 }
 
-
-.contact-me{
-    width: 40%;
-    margin: 40px auto 60px;
+/* Contact section */
+.contact-me {
+    width: 70%;
+    margin: 5% auto;
 }
 
+/* Button */
 .btn {
+    display: inline-block;
     background: #11CDD4;
-    background-image: -webkit-linear-gradient(top, #11CDD4, #357484);
-    background-image: -moz-linear-gradient(top, #11CDD4, #357484);
-    background-image: -ms-linear-gradient(top, #11CDD4, #357484);
-    background-image: -o-linear-gradient(top, #11CDD4, #357484);
     background-image: linear-gradient(to bottom, #11CDD4, #357484);
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
     border-radius: 10px;
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
     font-size: 20px;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
     text-decoration: none;
-  }
-  
-  .btn:hover {
-    background: #30E3CB;
-    background-image: -webkit-linear-gradient(top, #30E3CB, #2BC4AD);
-    background-image: -moz-linear-gradient(top, #30E3CB, #2BC4AD);
-    background-image: -ms-linear-gradient(top, #30E3CB, #2BC4AD);
-    background-image: -o-linear-gradient(top, #30E3CB, #2BC4AD);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #30E3CB;
     background-image: linear-gradient(to bottom, #30E3CB, #2BC4AD);
     text-decoration: none;
-  }
+}
 
 
   .copyright{
