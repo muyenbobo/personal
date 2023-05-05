@@ -86,7 +86,7 @@ hr {
 
 
 .mountain{
-    width: 50%;
+    width: 60%;
 }
 
 
@@ -101,7 +101,7 @@ hr {
 /* Clouds */
 .top-cloud, .bottom-cloud {
     position: absolute;
-    width: 12%;
+    width: 15%;
     margin: 50px 0 30px 0;
 }
 
