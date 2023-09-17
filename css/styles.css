@@ -1,28 +1,58 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* General styles */
 body {
     color: #40514E;
-    margin: 0;
     text-align: center;
     font-family: 'Merriweather', serif;
-    font-size: 100%;
+    font-size: 16px;
+}
+
+.sticky-header {
+    background-color: #357484;
+    color: #fff;
+    padding: 20px;
+    position: sticky;
+    top: 0;
     width: 100%;
+    z-index: 1000;
+    transition: top 6s;
 }
 
-.steve{
-    margin-top: 0;
-    padding-top: 13%;
-}
-
-.pro{
-    text-decoration: underline;
-}
-
-
-h1 {font-size: 6rem;
+.sticky-header h1 {
+    font-size: 2rem;
     font-family: Sacramento, cursive;
-    margin: 5% auto 0 auto;
-    color: #66BFBF;
+    color: #000000;
+    margin: 0;
 }
+
+.sticky-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #ffc0c0;
+    font-weight: normal;
+    margin: 0;
+}
+
+.sticky-header p {
+    margin: 0;
+}
+
+/* Your existing styles */
+
+/* Top container */
+.top-container {
+    background-color: #357484;
+    padding: 5% 0;
+}
+
+
+
 
 h2 {
     font-family: 'Montserrat', sans-serif;
@@ -53,43 +83,39 @@ p {
     line-height: 2;
 }
 
-hr {
-    border: dotted #EAF6F6 6px;
-    border-bottom: none;
-    width: 10%;
-    margin: 10% auto;
+
+
+
+
+
+.steve {
+    font-size: 2rem;
+    color: #66BFBF;
 }
 
-/* Top container */
-.top-container {
-    background-color: #357484;
-    width: 100%;
-    margin-top: 0;
-
+.pro {
+    text-decoration: underline;
 }
-
-
-.sp
 
 /* Middle container */
 .middle-container {
-    margin-bottom: 10%;
-    background-color: #66BFBF;
+    background-color: #ffffff;
+    padding: 5% 0;
+    line-height: 2.5;
 }
 
 /* Bottom container */
 .bottom-container {
-    margin-bottom: 0;
     background-color: #66BFBF;
     padding: 4% 0 2%;
+
 }
 
-
-.mountain{
-    width: 60%;
+.mountain {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
 }
-
-
 
 /* Introduction section */
 .intro {
@@ -99,84 +125,50 @@ hr {
 }
 
 /* Clouds */
-.top-cloud, .bottom-cloud {
+.top-cloud,
+.bottom-cloud {
     position: absolute;
-    width: 15%;
+    width: 12%;
     margin: 50px 0 30px 0;
 }
 
 .top-cloud {
     left: 75%;
-    margin: 5% 0 10% 0;
     top: 1%;
-
+    top: 10%;
 }
 
 .bottom-cloud {
     left: 15%;
-    bottom: 10%;
-    
-    }
+    margin-bottom: 440px;
+}
 
-
-.skill-row{
+/* Skill section */
+.skill-row {
     width: 50%;
-    margin: 100px auto 100px auto;
+    margin: 100px auto;
     text-align: left;
 }
 
-
-
-.skill-1{
+.skill-1,
+.skill-3 {
     width: 25%;
     float: left;
     margin-right: 30px;
     margin-bottom: 40px;
-  
 }
 
-
-
-
-
-.skill-2{
+.skill-2 {
     width: 25%;
     float: right;
     margin-left: 30px;
-    margin-bottom: 10%;
-
- 
-}
-
-
-
-
-
-.skill-3{
-    width: 25%;
-    float: left;
-    margin-right: 30px;
     margin-bottom: 40px;
-  
 }
 
-.skill-4{
-   width: 25%;
-    float: right;
-    margin-left: 30px;
-    margin-bottom: 10%;
-    
-    
-}
-
-
-
-
-
-.my-pic{
+.my-pic {
     width: 50%;
-    margin: 100px auto 20px auto;
- 
+    margin: 100px auto 20px;
+    display: block;
 }
 
 /* Contact section */
@@ -185,7 +177,7 @@ hr {
     margin: 5% auto;
 }
 
-/* Button */
+/* Button styles */
 .btn {
     display: inline-block;
     background: #11CDD4;
@@ -205,9 +197,20 @@ hr {
     text-decoration: none;
 }
 
-
-  .copyright{
+/* Copyright text */
+.copyright {
     color: #EAF6F6;
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 30px 0;
-  }
+}
+
+/* Links in the bottom container */
+.footer-link {
+    color: #EAF6F6;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
