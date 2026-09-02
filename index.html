@@ -370,9 +370,9 @@
     <section id="home">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow">computer science &nbsp;·&nbsp; full-stack development &nbsp;·&nbsp; ai</p>
+          <p class="eyebrow">computer science student &nbsp;·&nbsp; software developer &nbsp;·&nbsp; full-stack developer in training</p>
           <h1>I build software that solves problems worth solving.</h1>
-          <p class="lede">I'm a computer science student at the Air Force Institute of Technology, Kaduna, working across JavaScript, Python, and the web to turn ideas into things people can actually use — from contact management tools to environmental-monitoring platforms.</p>
+          <p class="lede">I'm a computer science student at the Air Force Institute of Technology, Kaduna, working across JavaScript, Python, and Java to turn ideas into things people can actually use — from contact management tools to environmental-intelligence platforms with tested, data-driven logic underneath.</p>
           <div class="cta-row">
             <a class="btn solid" href="#projects">View my projects</a>
             <a class="btn ghost" href="#contact">Get in touch</a>
@@ -389,7 +389,7 @@
     <section id="about">
       <p class="eyebrow">about</p>
       <h2>Where I'm coming from</h2>
-      <p>My path into tech started with Python, then grew into full-stack web development — JavaScript, APIs, authentication systems, and the everyday plumbing that makes an application actually work. I like building things that are practical: tools people open more than once.</p>
+      <p>My path into tech started with Python, then grew into full-stack web development — JavaScript, APIs, authentication systems, and the everyday plumbing that makes an application actually work. Coursework has since pulled in Java and object-oriented programming, computer architecture, discrete structures, and differential equations alongside it, so I'm building the theory and the practice side by side rather than picking one over the other. I like building things that are practical: tools people open more than once — and lately, tools I've also written automated tests for.</p>
       <p>Two things shape how I build. Human-computer interaction pushes me to think about who's using a thing and why an interface should feel obvious rather than clever. Operations research trains me to see a problem as a set of constraints and trade-offs before I touch a keyboard. Together they're the part of my work that doesn't show up in a stack list but changes how I approach everything else.</p>
       <p>Outside of coursework, I take part in hackathons and side projects to keep building against real deadlines and real teams — most recently NextStep Hacks 2026, where I worked with a small international team on an environmental data platform. I also cook seriously in my spare time — enough that friends treat me as the resident expert whenever meat pie comes up.</p>
       <div class="about-photo">
@@ -412,7 +412,7 @@
         </div>
         <div>
           <dt>currently learning</dt>
-          <dd>Advanced JavaScript, software architecture, and applied AI</dd>
+          <dd>Java and object-oriented programming, automated testing with Vitest, software architecture, and applied AI</dd>
         </div>
       </dl>
     </section>
@@ -428,11 +428,11 @@
           <p class="photo-caption">images/project-nextstep.jpg</p>
         </div>
         <div class="project-head">
-          <h3>NextStep Hacks 2026 — Earth Forward</h3>
+          <h3>AeroWatch — Earth Forward</h3>
           <span class="project-tag">2026 · hackathon</span>
         </div>
-        <p>An environmental intelligence platform built with a small international student team, combining air quality monitoring, urban heat mapping, a risk-analysis engine, and AI-generated environmental insights. I worked on data collection, API integration, and the risk and tree-coverage simulation logic.</p>
-        <div class="stack"><span>JavaScript</span><span>APIs</span><span>data modeling</span><span>AI insights</span></div>
+        <p>An environmental intelligence platform built with a small international student team for NextStep Hacks 2026, combining AQI scoring, environmental risk calculation and categorization, urban heat and tree-coverage simulation, and data-driven recommendations. I focused on the scoring and risk-engine logic — kept separate from the UI and covered by an automated test suite (<code>riskEngine.test.js</code>, 47 passing tests) — alongside data collection and API integration.</p>
+        <div class="stack"><span>JavaScript</span><span>APIs</span><span>Vitest</span><span>data modeling</span><span>AI insights</span></div>
       </div>
 
       <div class="project">
@@ -465,6 +465,23 @@
             </div>
             <p>A practical CRUD application built during my industrial training — add, edit, and delete contacts through a straightforward, user-friendly interface.</p>
             <div class="stack"><span>JavaScript</span><span>CRUD</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-row">
+          <div class="project-shot">
+            <!-- images/project-harry-potter-api.jpg -->
+            <div class="photo-slot" style="background-image:url('images/project-harry-potter-api.jpg');"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Harry Potter API explorer</h3>
+              <span class="project-tag">JavaScript · learning project</span>
+            </div>
+            <p>A small JavaScript project that pulls character data — names, houses, actors, images, birthdates — from a public API and renders it to the page. Built to work through real API response shapes (an object with a data property versus a plain array) and transforming that data with <code>.map()</code>.</p>
+            <div class="stack"><span>JavaScript</span><span>fetch</span><span>APIs</span><span>.map()</span></div>
           </div>
         </div>
       </div>
@@ -518,7 +535,11 @@
       </div>
       <div class="skill-group">
         <h4>Languages &amp; data</h4>
-        <div class="stack"><span>JavaScript</span><span>Python</span><span>SQL</span></div>
+        <div class="stack"><span>JavaScript</span><span>Python</span><span>Java</span><span>SQL</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Testing &amp; tooling</h4>
+        <div class="stack"><span>Vitest</span><span>Vite</span><span>Node.js</span></div>
       </div>
       <div class="skill-group">
         <h4>Tools</h4>
@@ -526,7 +547,7 @@
       </div>
       <div class="skill-group">
         <h4>Currently sharpening</h4>
-        <div class="stack"><span>Advanced JavaScript</span><span>Software architecture</span><span>AI-powered applications</span></div>
+        <div class="stack"><span>Java &amp; OOP</span><span>Discrete structures</span><span>Software architecture</span><span>AI-powered applications</span></div>
       </div>
     </section>
 
@@ -551,8 +572,8 @@
         </div>
         <div class="t-row">
           <span class="t-year">2026</span>
-          <h4>NextStep Hacks 2026</h4>
-          <p>First hackathon, working remotely with a small international student team on an "Earth Forward" environmental platform.</p>
+          <h4>NextStep Hacks 2026 — AeroWatch</h4>
+          <p>First hackathon, working remotely with a small international student team to build an "Earth Forward" environmental intelligence platform, including a tested risk-scoring engine.</p>
         </div>
       </div>
     </section>
