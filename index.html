@@ -1,140 +1,518 @@
 <!DOCTYPE html>
-		<html lang="en">
-
-
+<html lang="en">
 <head>
-	
-		<meta charset="UTF-8">
-			<meta http-equiv="X-UA-Compatible" content="IE=edge">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				
-	<title>Omotosho Steven</title>
-
-	<link rel="shortcut icon" href="fotor_2023-4-8_14_40_3.png" type="image/x-png">
-
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-
-	
-
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omotosho Muyiwa Steven — Computer Science Student & Developer</title>
+<meta name="description" content="Portfolio of Omotosho Muyiwa Steven — computer science student at AFIT Kaduna, full-stack developer, and builder of practical software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:ital,wght@0,500;1,400&family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F5F2E6;
+    --bg-raised: #EFEBDB;
+    --ink: #1D2119;
+    --ink-soft: #4B5245;
+    --sage: #767C6C;
+    --green: #2F5233;
+    --green-dim: #E4EADB;
+    --ochre: #B0722F;
+    --line: rgba(29,33,25,0.14);
+    --line-strong: rgba(29,33,25,0.28);
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", monospace;
+  }
 
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
 
+  .layout{
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    min-height:100vh;
+  }
+
+  /* ---------- sidebar ---------- */
+  aside{
+    position:sticky;
+    top:0;
+    height:100vh;
+    padding: 2.5rem 2rem;
+    border-right:1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .id-block .mark{
+    width:34px; height:34px;
+    border:1.5px solid var(--ink);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-style:italic; font-size:17px;
+    margin-bottom:1.25rem;
+  }
+  .id-block h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.25rem;
+    line-height:1.25;
+    margin:0 0 0.4rem;
+  }
+  .id-block p{
+    margin:0;
+    font-size:0.84rem;
+    color:var(--ink-soft);
+  }
+
+  nav.side-nav{margin-top:2.5rem;}
+  nav.side-nav a{
+    display:block;
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    text-decoration:none;
+    padding:0.35rem 0;
+    border-left:2px solid transparent;
+    padding-left:0.75rem;
+    margin-left:-0.75rem;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.side-nav a:hover, nav.side-nav a.active{
+    color:var(--ink);
+    border-left-color:var(--green);
+  }
+
+  .side-foot{font-size:0.78rem; color:var(--sage);}
+  .socials{display:flex; gap:0.9rem; margin-top:0.85rem;}
+  .socials a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-family:var(--mono);
+    font-size:0.76rem;
+    border-bottom:1px solid var(--line-strong);
+  }
+  .socials a:hover{color:var(--green); border-color:var(--green);}
+
+  /* ---------- main ---------- */
+  main{padding: 4.5rem 4rem 3rem;}
+  section{max-width:640px; margin-bottom:6rem; scroll-margin-top:2.5rem;}
+  section:last-of-type{margin-bottom:2rem;}
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.76rem;
+    color:var(--green);
+    margin:0 0 0.9rem;
+  }
+
+  h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.7rem;
+    margin:0 0 1.25rem;
+  }
+
+  /* hero */
+  #home{margin-bottom:5.5rem;}
+  #home h1{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(2.2rem, 4.2vw, 3.3rem);
+    line-height:1.08;
+    margin:0 0 1.1rem;
+    max-width:11ch;
+  }
+  #home .lede{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 0 1.9rem;
+  }
+  .cta-row{display:flex; gap:1rem; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--sans);
+    font-size:0.9rem;
+    font-weight:500;
+    text-decoration:none;
+    padding:0.65rem 1.15rem;
+    border-radius:2px;
+    border:1px solid var(--ink);
+    color:var(--ink);
+  }
+  .btn.solid{background:var(--green); border-color:var(--green); color:#F5F2E6;}
+  .btn.solid:hover{background:#274429;}
+  .btn.ghost:hover{background:var(--bg-raised);}
+
+  /* about */
+  #about p{margin:0 0 1rem; max-width:58ch;}
+  .about-facts{
+    margin-top:1.75rem;
+    border-top:1px solid var(--line);
+    padding-top:1.25rem;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.1rem 2rem;
+  }
+  .about-facts dt{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--sage);
+    margin-bottom:0.25rem;
+  }
+  .about-facts dd{margin:0; font-size:0.94rem;}
+
+  /* projects */
+  .project{
+    border-top:1px solid var(--line);
+    padding:1.6rem 0;
+  }
+  .project:last-child{border-bottom:1px solid var(--line);}
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .project-head h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.18rem;
+    margin:0;
+  }
+  .project-tag{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--ochre);
+    white-space:nowrap;
+  }
+  .project p{margin:0.55rem 0 0.7rem; color:var(--ink-soft); max-width:56ch;}
+  .stack{display:flex; flex-wrap:wrap; gap:0.4rem;}
+  .stack span{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    border:1px solid var(--line-strong);
+    padding:0.15rem 0.5rem;
+    border-radius:2px;
+  }
+  .project.featured{background:var(--green-dim); padding:1.6rem 1.6rem; border-top:none; margin-bottom:0.5rem;}
+  .project.featured .project-tag{color:var(--green);}
+
+  /* skills */
+  .skill-group{margin-bottom:1.5rem;}
+  .skill-group h4{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    margin:0 0 0.6rem;
+  }
+  .skill-group .stack span{background:var(--bg-raised);}
+
+  /* timeline */
+  .timeline{border-left:1px solid var(--line-strong); padding-left:1.5rem; margin-left:0.35rem;}
+  .t-row{position:relative; padding-bottom:1.9rem;}
+  .t-row:last-child{padding-bottom:0;}
+  .t-row::before{
+    content:"";
+    position:absolute; left:-1.94rem; top:0.35rem;
+    width:8px; height:8px; border-radius:50%;
+    background:var(--green);
+  }
+  .t-year{font-family:var(--mono); font-size:0.78rem; color:var(--ochre); display:block; margin-bottom:0.2rem;}
+  .t-row h4{font-family:var(--serif); font-weight:500; font-size:1.05rem; margin:0 0 0.3rem;}
+  .t-row p{margin:0; color:var(--ink-soft); max-width:54ch;}
+
+  /* contact */
+  #contact p{max-width:52ch; color:var(--ink-soft);}
+  .contact-email{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.6rem;
+    text-decoration:none;
+    color:var(--ink);
+    display:inline-block;
+    margin:1rem 0 1.75rem;
+    border-bottom:1px solid var(--line-strong);
+  }
+  .contact-email:hover{color:var(--green); border-color:var(--green);}
+  footer{
+    max-width:640px;
+    border-top:1px solid var(--line);
+    padding-top:1.25rem;
+    font-size:0.82rem;
+    color:var(--sage);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:0.5rem;
+  }
+
+  /* mobile */
+  .menu-toggle{display:none;}
+  @media (max-width: 860px){
+    .layout{grid-template-columns:1fr;}
+    aside{
+      position:relative;
+      height:auto;
+      flex-direction:row;
+      align-items:center;
+      justify-content:space-between;
+      padding:1.1rem 1.25rem;
+      border-right:none;
+      border-bottom:1px solid var(--line);
+    }
+    .id-block p, .side-foot{display:none;}
+    .id-block .mark{margin-bottom:0;}
+    nav.side-nav{
+      margin-top:0;
+      display:none;
+      position:absolute;
+      top:100%; left:0; right:0;
+      background:var(--bg);
+      border-bottom:1px solid var(--line);
+      padding:0.5rem 1.25rem 1rem;
+    }
+    nav.side-nav.open{display:block;}
+    .menu-toggle{
+      display:block;
+      background:none; border:1px solid var(--ink);
+      font-family:var(--mono); font-size:0.75rem;
+      padding:0.4rem 0.7rem; border-radius:2px;
+      color:var(--ink); cursor:pointer;
+    }
+    main{padding:2.75rem 1.25rem 2.5rem;}
+    .about-facts{grid-template-columns:1fr;}
+  }
+</style>
 </head>
-
-
-
 <body>
 
-	
+<div class="layout">
+  <aside>
+    <div>
+      <div class="id-block">
+        <div class="mark">M</div>
+        <h1>Omotosho Muyiwa Steven</h1>
+        <p>Computer science student, Kaduna, Nigeria</p>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sideNav">menu</button>
+      <nav class="side-nav" id="sideNav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="side-foot">
+      <div class="socials">
+        <a href="mailto:muyiwastephen8@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/muyiwa-stephen-12b25b271/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/muyiwastephen4" target="_blank" rel="noopener">X</a>
+      </div>
+      <p style="margin-top:0.9rem;">© 2026</p>
+    </div>
+  </aside>
 
-		<div class="top-container">
+  <main>
 
-		
+    <section id="home">
+      <p class="eyebrow">computer science &nbsp;·&nbsp; full-stack development &nbsp;·&nbsp; ai</p>
+      <h1>I build software that solves problems worth solving.</h1>
+      <p class="lede">I'm a computer science student at the Air Force Institute of Technology, Kaduna, working across JavaScript, Python, and the web to turn ideas into things people can actually use — from contact management tools to environmental-monitoring platforms.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="#projects">View my projects</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </section>
 
-			<img class="top-cloud" src="Images/cloud.png" alt="">
-
-	
-			<h1 class="steve">I'm Steven</h1>
-
-	<h2>
-             <p>
-				a <span class="pro">pro</span>grammer
-			 </p>
-
-		</h2>
-
-
-
-		<img class="bottom-cloud" src="Images/cloud.png" alt="">
-		
-		<img class="mountain" src="Images/mountain.png" alt="">
-		
-	</div>
-	
-
-	
-
-
-<div class="middle-container">
-    <div class="my-pic">
-            <img class="my-pic" src="fotor_2023-4-8_14_38_10.png" alt="">
-            <h2>Hello👋.</h2>
-            <p class="intro">I'm a Student, a Web Developer, and a Python Engineer. I Love 💖Pie and Love making my own food🍴 </p>
-   </div>
-    <hr>
+    <section id="about">
+      <p class="eyebrow">about</p>
+      <h2>Where I'm coming from</h2>
+      <p>My path into tech started with Python, then grew into full-stack web development — JavaScript, APIs, authentication systems, and the everyday plumbing that makes an application actually work. I like building things that are practical: tools people open more than once.</p>
+      <p>Two things shape how I build. Human-computer interaction pushes me to think about who's using a thing and why an interface should feel obvious rather than clever. Operations research trains me to see a problem as a set of constraints and trade-offs before I touch a keyboard. Together they're the part of my work that doesn't show up in a stack list but changes how I approach everything else.</p>
+      <p>Outside of coursework, I take part in hackathons and side projects to keep building against real deadlines and real teams — most recently NextStep Hacks 2026, where I worked with a small international team on an environmental data platform.</p>
+      <dl class="about-facts">
         <div>
-            <h2>My Skills.</h2>
-<div class="skill-row">
-                <img class="skill-1" src="fotor_2023-4-8_14_43_54.png" alt="my skills">
-                <h3>Design And Development👨‍💻</h3>
-                <p class="programming">As a web developer, my love for programming likely stems from the ability to create and build things that people can interact with and use. I enjoy the process of creating functional and visually appealing websites .</p>
-            </div>
-
-            <div class="skill-row">
-                <img class="skill-2" src="giphy.gif" alt="cooking">
-                <h3>Cooking🍽️</h3>
-                <p>Cooking is my passion and a skill I have honed over the years. I love experimenting with new flavors and techniques in the kitchen, and the joy of seeing others savor the dishes I create brings me immense satisfaction.</p>
-            </div>
+          <dt>education</dt>
+          <dd>B.Sc Computer Science, Air Force Institute of Technology (AFIT), Kaduna — direct entry, 200 level, CGPA 4.17/5.00</dd>
         </div>
+        <div>
+          <dt>based in</dt>
+          <dd>Kaduna, Nigeria — WAT (UTC+1)</dd>
+        </div>
+        <div>
+          <dt>focus</dt>
+          <dd>Full-stack development (JavaScript-first), with growing work in AI-assisted applications</dd>
+        </div>
+        <div>
+          <dt>currently learning</dt>
+          <dd>Advanced JavaScript, software architecture, and applied AI</dd>
+        </div>
+      </dl>
+    </section>
 
+    <section id="projects">
+      <p class="eyebrow">projects</p>
+      <h2>Things I've built</h2>
 
-    <div class="skill-row">
-        <img class="skill-3" src="Pie.png" alt="cooking">
-        <h3>Pie Challenge 😋</h3>
-        <p>But my best skill actually is eating Pie. I am the undisputed King of Pie Challenges. Meat pie, Apple Pie, and Chicken pie are my favorite snacks </p>
-    </div>
+      <div class="project featured">
+        <div class="project-head">
+          <h3>NextStep Hacks 2026 — Earth Forward</h3>
+          <span class="project-tag">2026 · hackathon</span>
+        </div>
+        <p>An environmental intelligence platform built with a small international student team, combining air quality monitoring, urban heat mapping, a risk-analysis engine, and AI-generated environmental insights. I worked on data collection, API integration, and the risk and tree-coverage simulation logic.</p>
+        <div class="stack"><span>JavaScript</span><span>APIs</span><span>data modeling</span><span>AI insights</span></div>
+      </div>
 
-    <div class="skill-row">
-        <img class="skill-2" src="python image.png" alt="cooking">
-        <h3></h3>
-        <p>As a Python Engineer, I have the skills to design, develop, and maintain Python-based applications and systems. I am proficient in using Python libraries, frameworks, and tools to solve complex problems and create scalable and robust software solutions. I have expertise in Python programming concepts such as data structures, algorithms, object-oriented programming, and functional programming.</p>
-    </div>
-    </div>
+      <div class="project">
+        <div class="project-head">
+          <h3>Contact manager application</h3>
+          <span class="project-tag">web app</span>
+        </div>
+        <p>A web-based contact management system with registration, login, and full CRUD on contacts, backed by a REST API and authentication.</p>
+        <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST APIs</span></div>
+      </div>
 
+      <div class="project">
+        <div class="project-head">
+          <h3>Phonebook management system</h3>
+          <span class="project-tag">SIWES training</span>
+        </div>
+        <p>A practical CRUD application built during my industrial training — add, edit, and delete contacts through a straightforward, user-friendly interface.</p>
+        <div class="stack"><span>JavaScript</span><span>CRUD</span></div>
+      </div>
 
-		 
-	
+      <div class="project">
+        <div class="project-head">
+          <h3>GPA / CGPA calculator</h3>
+          <span class="project-tag">desktop tool</span>
+        </div>
+        <p>A grade calculator I built first with Tkinter, then revisited with PySide6 to explore more modern desktop GUI options.</p>
+        <div class="stack"><span>Python</span><span>Tkinter</span><span>PySide6</span></div>
+      </div>
 
+      <div class="project">
+        <div class="project-head">
+          <h3>Hampos Game Hub &amp; Python games</h3>
+          <span class="project-tag">learning project</span>
+        </div>
+        <p>A small collection of Python games and utilities — including Mastermind, a number-guessing game, and Snake — built to sharpen fundamentals outside of coursework.</p>
+        <div class="stack"><span>Python</span><span>Tkinter</span><span>Pygame</span></div>
+      </div>
+    </section>
 
-		<hr>
-			
-		<div class="contact-me">
-			  	<h2>Get In Touch</h2>
-			  	<h3>If you love pie as much as i do.</h3>
-			  	<p class="contact-message">love pie as much as i do? Let's talk about how awesome they are!	We can code while we eat some pie 😁</p>
-				 
-				  <a class="btn" href="mailto:muyiwastephen8@gmail.com">CONTACT ME</a>
-				  <p class="contact-message">👆👆Or if you want to sponsor or hire me, Or just wanna say Hello👋?, you can always contact me right there 👆👆 </p>
+    <section id="skills">
+      <p class="eyebrow">skills</p>
+      <h2>What I work with</h2>
 
-				  
-			</div>
+      <div class="skill-group">
+        <h4>Frontend</h4>
+        <div class="stack"><span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span><span>Bootstrap</span><span>Responsive design</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Backend</h4>
+        <div class="stack"><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>Authentication</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Languages &amp; data</h4>
+        <div class="stack"><span>JavaScript</span><span>Python</span><span>SQL</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Tools</h4>
+        <div class="stack"><span>Git</span><span>GitHub</span><span>VS Code</span><span>PyCharm</span></div>
+      </div>
+      <div class="skill-group">
+        <h4>Currently sharpening</h4>
+        <div class="stack"><span>Advanced JavaScript</span><span>Software architecture</span><span>AI-powered applications</span></div>
+      </div>
+    </section>
 
+    <section id="journey">
+      <p class="eyebrow">journey</p>
+      <h2>How I got here</h2>
+      <div class="timeline">
+        <div class="t-row">
+          <span class="t-year">WAEC</span>
+          <h4>Secondary school, foundational strengths</h4>
+          <p>A1 in Marketing and Civic Education, with strong results across Biology, Chemistry, Mathematics, and Physics — the start of a habit of taking the analytical subjects seriously.</p>
+        </div>
+        <div class="t-row">
+          <span class="t-year">200 level</span>
+          <h4>B.Sc Computer Science, AFIT Kaduna</h4>
+          <p>Direct entry via IJMB. Coursework spans human-computer interaction, operations research and linear programming, and database systems, currently at a 4.17/5.00 CGPA.</p>
+        </div>
+        <div class="t-row">
+          <span class="t-year">SIWES</span>
+          <h4>Industrial training</h4>
+          <p>Hands-on work with JavaScript promises, API consumption, Git workflows, and error handling — building the Contact Manager and Phonebook projects along the way.</p>
+        </div>
+        <div class="t-row">
+          <span class="t-year">2026</span>
+          <h4>NextStep Hacks 2026</h4>
+          <p>First hackathon, working remotely with a small international student team on an "Earth Forward" environmental platform.</p>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact">
+      <p class="eyebrow">contact</p>
+      <h2>Let's talk</h2>
+      <p>Whether it's an internship, a collaboration, or a hackathon team that needs a full-stack developer, I'd like to hear from you.</p>
+      <a class="contact-email" href="mailto:muyiwastephen8@gmail.com">muyiwastephen8@gmail.com</a>
+      <footer>
+        <span>Omotosho Muyiwa Steven, Kaduna, Nigeria</span>
+        <span>
+          <a href="https://www.linkedin.com/in/muyiwa-stephen-12b25b271/" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="https://twitter.com/muyiwastephen4" target="_blank" rel="noopener">X</a> ·
+          <a href="https://www.youtube.com/channel/UCDdmA7_Q_0K6twwJo8NxwoQ" target="_blank" rel="noopener">YouTube</a>
+        </span>
+      </footer>
+    </section>
 
-
-
-
-
+  </main>
 </div>
-	
 
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const sideNav = document.getElementById('sideNav');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const open = sideNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    sideNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }));
+  }
 
-		  
-  <div class="bottom-container">
-			<a class="footer-link" href="https://www.linkedin.com/in/muyiwa-stephen-12b25b271/">LinkedIn</a>
-			<a class="footer-link" href="https://twitter.com/muyiwastephen4">Twitter</a>
-			<a class="footer-link" href="https://www.youtube.com/channel/UCDdmA7_Q_0K6twwJo8NxwoQ/">Youtube</a>
-			<p class="copyright">© 2023 Steven Omotosho.</p>
-	  </div>
-		  
+  const links = document.querySelectorAll('nav.side-nav a');
+  const sections = document.querySelectorAll('main section');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const id = entry.target.getAttribute('id');
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => io.observe(s));
+</script>
 
-	
-	
-	
-	
-	</body>
-
-		</html>
+</body>
+</html>
