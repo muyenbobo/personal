@@ -94,7 +94,7 @@
   }
 
   .side-foot{font-size:0.78rem; color:var(--sage);}
-  .socials{display:flex; gap:0.9rem; margin-top:0.85rem;}
+  .socials{display:flex; flex-wrap:wrap; gap:0.6rem 0.9rem; margin-top:0.85rem;}
   .socials a{
     text-decoration:none;
     color:var(--ink-soft);
@@ -153,6 +153,37 @@
   .btn.solid{background:var(--green); border-color:var(--green); color:#F5F2E6;}
   .btn.solid:hover{background:#274429;}
   .btn.ghost:hover{background:var(--bg-raised);}
+
+  /* photo placeholders — replace the background-image url with your own file */
+  .photo-slot{
+    border:1px dashed var(--line-strong);
+    border-radius:4px;
+    background-color:var(--bg-raised);
+    background-size:cover;
+    background-position:center;
+  }
+  .photo-caption{
+    font-family:var(--mono);
+    font-size:0.68rem;
+    color:var(--sage);
+    margin-top:0.5rem;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap:2.5rem;
+    align-items:start;
+  }
+  .hero-grid .photo-slot{aspect-ratio:4/5;}
+  .about-photo{margin:1.75rem 0; max-width:320px;}
+  .about-photo .photo-slot{aspect-ratio:5/4;}
+  .project-shot{width:88px; flex-shrink:0;}
+  .project-shot .photo-slot{aspect-ratio:1/1;}
+  .project-head{align-items:flex-start;}
+  .project-body{flex:1; min-width:0;}
+  .project-row{display:flex; gap:1.1rem;}
+  .project.featured .project-shot{width:100%; max-width:220px; margin-bottom:1rem;}
+  .project.featured .project-shot .photo-slot{aspect-ratio:16/10;}
 
   /* about */
   #about p{margin:0 0 1rem; max-width:58ch;}
@@ -295,6 +326,10 @@
     }
     main{padding:2.75rem 1.25rem 2.5rem;}
     .about-facts{grid-template-columns:1fr;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-grid .photo-slot{aspect-ratio:16/10; max-width:280px;}
+    .project-row{flex-direction:column;}
+    .project-shot{width:120px;}
   }
 </style>
 </head>
@@ -321,8 +356,10 @@
     <div class="side-foot">
       <div class="socials">
         <a href="mailto:muyiwastephen8@gmail.com">Email</a>
+        <a href="https://github.com/muyenbobo/" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/muyiwa-stephen-12b25b271/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://twitter.com/muyiwastephen4" target="_blank" rel="noopener">X</a>
+        <a href="https://www.instagram.com/omotosure_stevo/" target="_blank" rel="noopener">Instagram</a>
       </div>
       <p style="margin-top:0.9rem;">© 2026</p>
     </div>
@@ -331,12 +368,21 @@
   <main>
 
     <section id="home">
-      <p class="eyebrow">computer science &nbsp;·&nbsp; full-stack development &nbsp;·&nbsp; ai</p>
-      <h1>I build software that solves problems worth solving.</h1>
-      <p class="lede">I'm a computer science student at the Air Force Institute of Technology, Kaduna, working across JavaScript, Python, and the web to turn ideas into things people can actually use — from contact management tools to environmental-monitoring platforms.</p>
-      <div class="cta-row">
-        <a class="btn solid" href="#projects">View my projects</a>
-        <a class="btn ghost" href="#contact">Get in touch</a>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">computer science &nbsp;·&nbsp; full-stack development &nbsp;·&nbsp; ai</p>
+          <h1>I build software that solves problems worth solving.</h1>
+          <p class="lede">I'm a computer science student at the Air Force Institute of Technology, Kaduna, working across JavaScript, Python, and the web to turn ideas into things people can actually use — from contact management tools to environmental-monitoring platforms.</p>
+          <div class="cta-row">
+            <a class="btn solid" href="#projects">View my projects</a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div>
+          <!-- drop your headshot in images/hero.jpg — this box will show it automatically -->
+          <div class="photo-slot" style="background-image:url('images/hero.jpg');"></div>
+          <p class="photo-caption">images/hero.jpg</p>
+        </div>
       </div>
     </section>
 
@@ -345,7 +391,12 @@
       <h2>Where I'm coming from</h2>
       <p>My path into tech started with Python, then grew into full-stack web development — JavaScript, APIs, authentication systems, and the everyday plumbing that makes an application actually work. I like building things that are practical: tools people open more than once.</p>
       <p>Two things shape how I build. Human-computer interaction pushes me to think about who's using a thing and why an interface should feel obvious rather than clever. Operations research trains me to see a problem as a set of constraints and trade-offs before I touch a keyboard. Together they're the part of my work that doesn't show up in a stack list but changes how I approach everything else.</p>
-      <p>Outside of coursework, I take part in hackathons and side projects to keep building against real deadlines and real teams — most recently NextStep Hacks 2026, where I worked with a small international team on an environmental data platform.</p>
+      <p>Outside of coursework, I take part in hackathons and side projects to keep building against real deadlines and real teams — most recently NextStep Hacks 2026, where I worked with a small international team on an environmental data platform. I also cook seriously in my spare time — enough that friends treat me as the resident expert whenever meat pie comes up.</p>
+      <div class="about-photo">
+        <!-- drop a candid or working photo in images/about.jpg -->
+        <div class="photo-slot" style="background-image:url('images/about.jpg');"></div>
+        <p class="photo-caption">images/about.jpg</p>
+      </div>
       <dl class="about-facts">
         <div>
           <dt>education</dt>
@@ -371,6 +422,11 @@
       <h2>Things I've built</h2>
 
       <div class="project featured">
+        <div class="project-shot">
+          <!-- drop a screenshot in images/project-nextstep.jpg -->
+          <div class="photo-slot" style="background-image:url('images/project-nextstep.jpg');"></div>
+          <p class="photo-caption">images/project-nextstep.jpg</p>
+        </div>
         <div class="project-head">
           <h3>NextStep Hacks 2026 — Earth Forward</h3>
           <span class="project-tag">2026 · hackathon</span>
@@ -380,39 +436,71 @@
       </div>
 
       <div class="project">
-        <div class="project-head">
-          <h3>Contact manager application</h3>
-          <span class="project-tag">web app</span>
+        <div class="project-row">
+          <div class="project-shot">
+            <!-- images/project-contact-manager.jpg -->
+            <div class="photo-slot" style="background-image:url('images/project-contact-manager.jpg');"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Contact manager application</h3>
+              <span class="project-tag">web app</span>
+            </div>
+            <p>A web-based contact management system with registration, login, and full CRUD on contacts, backed by a REST API and authentication.</p>
+            <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST APIs</span></div>
+          </div>
         </div>
-        <p>A web-based contact management system with registration, login, and full CRUD on contacts, backed by a REST API and authentication.</p>
-        <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST APIs</span></div>
       </div>
 
       <div class="project">
-        <div class="project-head">
-          <h3>Phonebook management system</h3>
-          <span class="project-tag">SIWES training</span>
+        <div class="project-row">
+          <div class="project-shot">
+            <!-- images/project-phonebook.jpg -->
+            <div class="photo-slot" style="background-image:url('images/project-phonebook.jpg');"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Phonebook management system</h3>
+              <span class="project-tag">SIWES training</span>
+            </div>
+            <p>A practical CRUD application built during my industrial training — add, edit, and delete contacts through a straightforward, user-friendly interface.</p>
+            <div class="stack"><span>JavaScript</span><span>CRUD</span></div>
+          </div>
         </div>
-        <p>A practical CRUD application built during my industrial training — add, edit, and delete contacts through a straightforward, user-friendly interface.</p>
-        <div class="stack"><span>JavaScript</span><span>CRUD</span></div>
       </div>
 
       <div class="project">
-        <div class="project-head">
-          <h3>GPA / CGPA calculator</h3>
-          <span class="project-tag">desktop tool</span>
+        <div class="project-row">
+          <div class="project-shot">
+            <!-- images/project-gpa-calculator.jpg -->
+            <div class="photo-slot" style="background-image:url('images/project-gpa-calculator.jpg');"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>GPA / CGPA calculator</h3>
+              <span class="project-tag">desktop tool</span>
+            </div>
+            <p>A grade calculator I built first with Tkinter, then revisited with PySide6 to explore more modern desktop GUI options.</p>
+            <div class="stack"><span>Python</span><span>Tkinter</span><span>PySide6</span></div>
+          </div>
         </div>
-        <p>A grade calculator I built first with Tkinter, then revisited with PySide6 to explore more modern desktop GUI options.</p>
-        <div class="stack"><span>Python</span><span>Tkinter</span><span>PySide6</span></div>
       </div>
 
       <div class="project">
-        <div class="project-head">
-          <h3>Hampos Game Hub &amp; Python games</h3>
-          <span class="project-tag">learning project</span>
+        <div class="project-row">
+          <div class="project-shot">
+            <!-- images/project-game-hub.jpg -->
+            <div class="photo-slot" style="background-image:url('images/project-game-hub.jpg');"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-head">
+              <h3>Hampos Game Hub &amp; Python games</h3>
+              <span class="project-tag">learning project</span>
+            </div>
+            <p>A small collection of Python games and utilities — including Mastermind, a number-guessing game, and Snake — built to sharpen fundamentals outside of coursework.</p>
+            <div class="stack"><span>Python</span><span>Tkinter</span><span>Pygame</span></div>
+          </div>
         </div>
-        <p>A small collection of Python games and utilities — including Mastermind, a number-guessing game, and Snake — built to sharpen fundamentals outside of coursework.</p>
-        <div class="stack"><span>Python</span><span>Tkinter</span><span>Pygame</span></div>
       </div>
     </section>
 
@@ -477,8 +565,10 @@
       <footer>
         <span>Omotosho Muyiwa Steven, Kaduna, Nigeria</span>
         <span>
+          <a href="https://github.com/muyenbobo/" target="_blank" rel="noopener">GitHub</a> ·
           <a href="https://www.linkedin.com/in/muyiwa-stephen-12b25b271/" target="_blank" rel="noopener">LinkedIn</a> ·
           <a href="https://twitter.com/muyiwastephen4" target="_blank" rel="noopener">X</a> ·
+          <a href="https://www.instagram.com/omotosure_stevo/" target="_blank" rel="noopener">Instagram</a> ·
           <a href="https://www.youtube.com/channel/UCDdmA7_Q_0K6twwJo8NxwoQ" target="_blank" rel="noopener">YouTube</a>
         </span>
       </footer>
